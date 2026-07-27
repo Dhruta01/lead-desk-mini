@@ -1,3 +1,5 @@
+import { Timestamp } from "firebase/firestore";
+
 export interface Lead {
   id: string;
   name: string;
@@ -7,5 +9,5 @@ export interface Lead {
   budget: string;
   message: string;
   status: string;
-  createdAt?: unknown;
+  createdAt?: Timestamp;
 }
