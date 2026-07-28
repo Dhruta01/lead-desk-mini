@@ -1,36 +1,148 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 LeadDesk CRM
 
-## Getting Started
+A modern Lead Management System built using **Next.js**, **TypeScript**, **Firebase Authentication**, **Cloud Firestore**, and **Tailwind CSS**.
 
-First, run the development server:
+The application allows businesses to collect customer leads through a responsive landing page and manage them securely through an admin dashboard.
+
+---
+
+## 🌐 Live Demo
+
+👉 https://YOUR-VERCEL-LINK.vercel.app
+
+---
+
+## 📌 Features
+
+- 🔐 Firebase Authentication
+- 📋 Lead Submission Form
+- ☁️ Cloud Firestore Database
+- 📊 Admin Dashboard
+- 📈 Analytics Dashboard
+- 🔍 Search Leads
+- 🎯 Filter Leads
+- ✏️ Update Lead Status
+- 🗑 Delete Leads
+- 📤 Export Leads to CSV
+- 📱 Fully Responsive UI
+- ⚡ Built with Next.js App Router
+
+---
+
+## 🛠 Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Firebase Authentication
+- Cloud Firestore
+- React Hot Toast
+- Chart.js
+- Vercel
+
+---
+
+## 📸 Screenshots
+
+### Home Page
+
+_Add screenshot here_
+
+### Login
+
+_Add screenshot here_
+
+### Dashboard
+
+_Add screenshot here_
+
+### Analytics
+
+_Add screenshot here_
+
+---
+
+## 📂 Folder Structure
+
+```
+app/
+components/
+lib/
+public/
+types/
+```
+
+---
+
+## ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/lead-desk-mini.git
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build for production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🔑 Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Create a `.env.local` file.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
 
-## Deploy on Vercel
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+
+NEXT_PUBLIC_FIREBASE_APP_ID=
+```
+
+---
+
+## 🚀 Future Improvements
+
+- PDF Export
+- Email Notifications
+- Dark Mode
+- Pagination
+- Role Based Authentication
+
+---
+
+## 👨‍💻 Author
+
+**Dhruta Nalawade**
+
+GitHub:
+https://github.com/YOUR_GITHUB_USERNAME
+
+LinkedIn:
+https://www.linkedin.com/in/YOUR_LINKEDIN/
+
+---
+
+⭐ If you like this project, don't forget to star the repository.
