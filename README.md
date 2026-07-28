@@ -8,7 +8,7 @@ The application allows businesses to collect customer leads through a responsive
 
 ## 🌐 Live Demo
 
-👉 https://YOUR-VERCEL-LINK.vercel.app
+👉 https://lead-desk-mini-theta-eight.vercel.app
 
 ---
 
@@ -43,26 +43,6 @@ The application allows businesses to collect customer leads through a responsive
 
 ---
 
-## 📸 Screenshots
-
-### Home Page
-
-_Add screenshot here_
-
-### Login
-
-_Add screenshot here_
-
-### Dashboard
-
-_Add screenshot here_
-
-### Analytics
-
-_Add screenshot here_
-
----
-
 ## 📂 Folder Structure
 
 ```
@@ -80,7 +60,7 @@ types/
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/lead-desk-mini.git
+git clone https://github.com/Dhruta01/lead-desk-mini.git
 ```
 
 Install dependencies
@@ -138,10 +118,10 @@ NEXT_PUBLIC_FIREBASE_APP_ID=
 **Dhruta Nalawade**
 
 GitHub:
-https://github.com/YOUR_GITHUB_USERNAME
+https://github.com/Dhruta01
 
 LinkedIn:
-https://www.linkedin.com/in/YOUR_LINKEDIN/
+www.linkedin.com/in/dhruta-nalawade-6b52ba36a
 
 ---
 
