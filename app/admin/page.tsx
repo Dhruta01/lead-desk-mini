@@ -14,8 +14,15 @@ import { db, auth } from "@/lib/firebase";
 import LeadTable from "@/components/LeadTable";
 import DashboardChart from "@/components/DashboardChart";
 import ExportButton from "@/components/ExportButton";
-import { Lead } from "@/types/lead";
 import RecentLeads from "@/components/RecentLeads";
+import { Lead } from "@/types/lead";
+
+import {
+  FaUsers,
+  FaUserPlus,
+  FaPhoneAlt,
+  FaCheckCircle,
+} from "react-icons/fa";
 
 export default function AdminPage() {
   const router = useRouter();
@@ -66,26 +73,14 @@ export default function AdminPage() {
   }
 
   const total = leads.length;
-  const newLeads = leads.filter(
-    (l) => l.status === "New"
-  ).length;
-
-  const contacted = leads.filter(
-    (l) => l.status === "Contacted"
-  ).length;
-
-  const closed = leads.filter(
-    (l) => l.status === "Closed"
-  ).length;
+  const newLeads = leads.filter((l) => l.status === "New").length;
+  const contacted = leads.filter((l) => l.status === "Contacted").length;
+  const closed = leads.filter((l) => l.status === "Closed").length;
 
   const filteredLeads = leads.filter((lead) => {
     const searchMatch =
-      lead.name
-        .toLowerCase()
-        .includes(search.toLowerCase()) ||
-      lead.email
-        .toLowerCase()
-        .includes(search.toLowerCase());
+      lead.name.toLowerCase().includes(search.toLowerCase()) ||
+      lead.email.toLowerCase().includes(search.toLowerCase());
 
     const statusMatch =
       statusFilter === "All"
@@ -98,7 +93,7 @@ export default function AdminPage() {
   if (userLoading) {
     return (
       <main className="min-h-screen flex justify-center items-center">
-        <h2 className="text-2xl font-bold">
+        <h2 className="text-3xl font-bold">
           Checking Login...
         </h2>
       </main>
@@ -110,16 +105,18 @@ export default function AdminPage() {
 
       <div className="max-w-7xl mx-auto">
 
-        <div className="flex justify-between items-center mb-8">
+        {/* HEADER */}
+
+        <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-5">
 
           <div>
 
-            <h1 className="text-4xl font-bold">
-              Admin Dashboard
+            <h1 className="text-5xl font-extrabold">
+              LeadDesk CRM
             </h1>
 
-            <p className="text-gray-500 mt-2">
-              Lead Management System
+            <p className="text-gray-500 text-lg mt-2">
+              Manage customer leads efficiently with Firebase & Next.js
             </p>
 
           </div>
@@ -132,7 +129,7 @@ export default function AdminPage() {
 
             <button
               onClick={handleLogout}
-              className="bg-red-600 text-white px-5 py-3 rounded-xl"
+              className="bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-xl"
             >
               Logout
             </button>
@@ -141,85 +138,123 @@ export default function AdminPage() {
 
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        {/* DASHBOARD CARDS */}
 
-          <div className="bg-white rounded-xl shadow p-6">
-            <h2>Total Leads</h2>
-            <p className="text-4xl font-bold">
-              {total}
-            </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+
+          <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex justify-between items-center">
+
+            <div>
+
+              <h2 className="text-gray-500">
+                Total Leads
+              </h2>
+
+              <p className="text-4xl font-bold mt-2">
+                {total}
+              </p>
+
+            </div>
+
+            <FaUsers className="text-5xl text-blue-600" />
+
           </div>
 
-          <div className="bg-white rounded-xl shadow p-6">
-            <h2>New</h2>
-            <p className="text-4xl text-blue-600 font-bold">
-              {newLeads}
-            </p>
+          <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex justify-between items-center">
+
+            <div>
+
+              <h2 className="text-gray-500">
+                New Leads
+              </h2>
+
+              <p className="text-4xl font-bold text-blue-600 mt-2">
+                {newLeads}
+              </p>
+
+            </div>
+
+            <FaUserPlus className="text-5xl text-blue-500" />
+
           </div>
 
-          <div className="bg-white rounded-xl shadow p-6">
-            <h2>Contacted</h2>
-            <p className="text-4xl text-yellow-600 font-bold">
-              {contacted}
-            </p>
+          <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex justify-between items-center">
+
+            <div>
+
+              <h2 className="text-gray-500">
+                Contacted
+              </h2>
+
+              <p className="text-4xl font-bold text-yellow-600 mt-2">
+                {contacted}
+              </p>
+
+            </div>
+
+            <FaPhoneAlt className="text-5xl text-yellow-500" />
+
           </div>
 
-          <div className="bg-white rounded-xl shadow p-6">
-            <h2>Closed</h2>
-            <p className="text-4xl text-green-600 font-bold">
-              {closed}
-            </p>
+          <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex justify-between items-center">
+
+            <div>
+
+              <h2 className="text-gray-500">
+                Closed
+              </h2>
+
+              <p className="text-4xl font-bold text-green-600 mt-2">
+                {closed}
+              </p>
+
+            </div>
+
+            <FaCheckCircle className="text-5xl text-green-500" />
+
           </div>
 
         </div>
 
-        {/* <DashboardChart
-          total={total}
-          newLeads={newLeads}
-          contacted={contacted}
-          closed={closed}
-        /> */}
+        {/* CHART + RECENT LEADS */}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
 
-        <DashboardChart
-          total={total}
-          newLeads={newLeads}
-          contacted={contacted}
-          closed={closed}
-        />
+          <DashboardChart
+            total={total}
+            newLeads={newLeads}
+            contacted={contacted}
+            closed={closed}
+          />
 
-        <RecentLeads
-          leads={filteredLeads}
-        />
+          <RecentLeads
+            leads={filteredLeads}
+          />
 
-      </div>
-      <div className="bg-white rounded-xl shadow p-6 mb-8">
+        </div>
+
+        {/* SEARCH */}
+
+        <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
 
           <div className="flex flex-col md:flex-row gap-4">
 
             <input
               type="text"
-              placeholder="Search..."
+              placeholder="Search by name or email..."
               value={search}
-              onChange={(
-                e: ChangeEvent<HTMLInputElement>
-              ) =>
-                setSearch(
-                  e.target.value
-                )
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                setSearch(e.target.value)
               }
-              className="flex-1 border rounded-lg p-3"
+              className="flex-1 border-2 border-gray-200 rounded-xl p-4 focus:outline-none focus:border-blue-500"
             />
 
             <select
               value={statusFilter}
               onChange={(e) =>
-                setStatusFilter(
-                  e.target.value
-                )
+                setStatusFilter(e.target.value)
               }
-              className="border rounded-lg p-3"
+              className="border-2 border-gray-200 rounded-xl p-4"
             >
               <option>All</option>
               <option>New</option>
@@ -231,14 +266,24 @@ export default function AdminPage() {
 
         </div>
 
+        {/* TABLE */}
+
         {loading ? (
-          <div className="bg-white rounded-xl shadow p-10 text-center">
-            Loading...
+
+          <div className="bg-white rounded-2xl shadow-lg p-10 text-center">
+
+            <h2 className="text-2xl font-bold">
+              Loading Leads...
+            </h2>
+
           </div>
+
         ) : (
+
           <LeadTable
             leads={filteredLeads}
           />
+
         )}
 
       </div>

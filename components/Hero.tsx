@@ -20,13 +20,26 @@ export default function Hero() {
         </p>
 
         <div className="mt-10 flex justify-center gap-4">
-          <button className="bg-white text-blue-700 px-8 py-3 rounded-xl font-semibold hover:scale-105 transition">
+          {/* <button className="bg-white text-blue-700 px-8 py-3 rounded-xl font-semibold hover:scale-105 transition">
             Get Started
-          </button>
+          </button> */}
+          <a
+            href="#contact"
+            className="bg-white text-blue-700 px-8 py-3 rounded-xl font-semibold hover:scale-105 transition inline-block"
+          >
+            Get Started
+          </a>
 
-          <button className="border border-white px-8 py-3 rounded-xl hover:bg-white hover:text-blue-700 transition">
+          {/* <button className="border border-white px-8 py-3 rounded-xl hover:bg-white hover:text-blue-700 transition">
             Learn More
-          </button>
+          </button> */}
+
+          <a
+            href="#features"
+            className="border border-white px-8 py-3 rounded-xl hover:bg-white hover:text-blue-700 transition inline-block"
+          >
+            Learn More
+          </a>
         </div>
 
       </div>

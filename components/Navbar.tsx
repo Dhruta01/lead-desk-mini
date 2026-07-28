@@ -1,37 +1,47 @@
+"use client";
+
+import Link from "next/link";
+
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+    <header className="sticky top-0 z-50 bg-white shadow-sm border-b">
 
-        <h1 className="text-3xl font-bold text-blue-600">
-          LeadDesk Mini
-        </h1>
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        <div className="flex gap-8 items-center">
+        <Link
+          href="/"
+          className="text-3xl font-extrabold text-blue-600"
+        >
+          LeadDesk CRM
+        </Link>
+
+        <nav className="hidden md:flex items-center gap-8">
 
           <a
             href="#features"
-            className="text-gray-700 hover:text-blue-600 transition"
+            className="hover:text-blue-600 transition"
           >
             Features
           </a>
 
           <a
             href="#contact"
-            className="text-gray-700 hover:text-blue-600 transition"
+            className="hover:text-blue-600 transition"
           >
             Contact
           </a>
 
-          <button
+          <Link
+            href="/login"
             className="bg-blue-600 text-white px-5 py-2 rounded-xl hover:bg-blue-700 transition"
           >
             Admin Login
-          </button>
+          </Link>
 
-        </div>
+        </nav>
 
       </div>
-    </nav>
+
+    </header>
   );
 }
